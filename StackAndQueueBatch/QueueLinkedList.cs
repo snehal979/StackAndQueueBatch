@@ -47,5 +47,44 @@ namespace StackAndQueueBatch
                 temp =temp.next;
             }
         }
+        /// <summary>
+        /// Uc4Dequeue Data QueueLinkedList
+        /// </summary>
+        public void Dequeue()
+        {
+            if (headTop==null)
+            {
+                Console.WriteLine("list is empty");
+            }
+            Console.WriteLine("data is top position "+headTop.data);
+            headTop =headTop.next;
+        }
+        /// <summary>
+        /// Empty
+        /// </summary>
+        public void Empty()
+        {
+            while (headTop!=null)
+            {
+                Dequeue();
+            }
+        }
+        public int Size()
+        {
+            Node temp = headTop;
+            int count = 0;
+            if (temp == null)
+            {
+                Console.WriteLine("linked list is empty");
+            }
+            while (temp != null)
+            {
+                Console.WriteLine(temp.data+" ");
+                temp = temp.next;
+                count++;
+            }
+            //Console.WriteLine("size of stack list is "+count);
+            return count;
+        }
     }
 }
